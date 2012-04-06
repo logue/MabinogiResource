@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Library">
+      <UniqueIdentifier>{94aa57f7-282c-44ed-8205-9d7916c797a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\zlib">
+      <UniqueIdentifier>{c6f04570-0e2b-458c-bfbb-34cdac017721}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="FileResource.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="MabinogiResource.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="MersenneTwister.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PackResource.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PackResourceSet.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceFileSystem.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32File.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="NullProgressMonitor.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\adler32.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\compress.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\crc32.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\deflate.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\gzclose.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\gzlib.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\gzread.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\gzwrite.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\infback.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\inffast.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\inflate.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\inftrees.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\trees.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\uncompr.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib-1.2.6\zutil.c">
+      <Filter>Library\zlib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileResource.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="IProgressMonitor.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="IResource.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="IResourceSet.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="MabinogiResource.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="MersenneTwister.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="PackResource.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="PackResourceSet.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceFileSystem.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="types.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32File.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="IObject.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ExportMacro.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="NullProgressMonitor.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="tstring.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib-1.2.6\crc32.h">
+      <Filter>Library\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib-1.2.6\deflate.h">
+      <Filter>Library\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib-1.2.6\gzguts.h">
+      <Filter>Library\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib-1.2.6\inffast.h">
+      <Filter>Library\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib-1.2.6\inffixed.h">
+      <Filter>Library\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib-1.2.6\inflate.h">
+      <Filter>Library\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib-1.2.6\inftrees.h">
+      <Filter>Library\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib-1.2.6\trees.h">
+      <Filter>Library\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib-1.2.6\zconf.h">
+      <Filter>Library\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib-1.2.6\zlib.h">
+      <Filter>Library\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib-1.2.6\zutil.h">
+      <Filter>Library\zlib</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="zlib-1.2.6\README">
+      <Filter>Library\zlib</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MabinogiResource.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
