@@ -87,7 +87,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.ico" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

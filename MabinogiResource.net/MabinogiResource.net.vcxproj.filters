@@ -38,9 +38,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
-    <None Include="app.ico">
-      <Filter>Resource</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">

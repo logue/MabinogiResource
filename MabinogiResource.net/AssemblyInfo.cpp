@@ -11,11 +11,11 @@ using namespace System::Security::Permissions;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 //
-[assembly:AssemblyTitleAttribute("MabinogiResourceNet")];
-[assembly:AssemblyDescriptionAttribute("")];
+[assembly:AssemblyTitleAttribute("Mabinogi Resource .Net")];
+[assembly:AssemblyDescriptionAttribute("Mabinogi Resouce Library for .NET wrapper")];
 [assembly:AssemblyConfigurationAttribute("")];
-[assembly:AssemblyCompanyAttribute("Microsoft")];
-[assembly:AssemblyProductAttribute("MabinogiResourceNet")];
+[assembly:AssemblyCompanyAttribute("")];
+[assembly:AssemblyProductAttribute("Mabinogi Resource Net")];
 [assembly:AssemblyCopyrightAttribute("Copyright (c) 2011-2012")];
 [assembly:AssemblyTrademarkAttribute("")];
 [assembly:AssemblyCultureAttribute("")];
