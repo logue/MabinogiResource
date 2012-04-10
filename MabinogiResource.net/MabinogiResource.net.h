@@ -4,6 +4,7 @@
 #include <Windows.h>
 #include "../MabinogiResource/MabinogiResource.h"
 #include <vector>
+
 using namespace std;
 using namespace System;
 using namespace System::Text;
@@ -14,63 +15,87 @@ namespace MabinogiResource
 
 	public ref class PackResource
 	{
-	public:
-		//获取文件的名字
-		String^	GetName()		{return m_Name;}
-		//获取文件的大小
-		size_t	GetSize()		{return m_Size;}
-		//获取文件的数据
-		bool	GetData(array<Byte>^ buffer);
-		//关闭文件数据
-		void	Close();
 	private:
 		PACK_RESOURCE_HANDLE	m_Handle;
 		String^					m_Name;
 		size_t					m_Size;
+		size_t					m_version;
 	public:
+		// Constructor
 		PackResource(PACK_RESOURCE_HANDLE handle);
+
+		// Get file name
+		String^	GetName()		{return m_Name;}
+		// Get file size
+		size_t	GetSize()		{return m_Size;}
+		// Get file version
+		size_t	GetVersion()	{return m_version;}
+
+		// Access to the data file
+		bool	GetData(array<Byte>^ buffer);
+
+		// Close the file data
+		void	Close();
+	
+		// Destructor
 		~PackResource();
 	};
 
-	// 文件集合
+	// Package File
 	public ref class PackResourceSet
 	{
-	public:
-		//获取资源集中文件的数量
-		size_t		GetFileCount()		{return m_FileCount;}
-		//获取指定索引的文件
-		PackResource^	GetFileByIndex(size_t index);
-		//获取指定名称的文件
-		PackResource^	GetFileByName(String^ name);
-		//关闭资源集
-		void		Close();
-		//析构函数
-		~PackResourceSet();
 	private:
 		PACK_RESOURCE_SET_HANDLE	m_Handle;
-		size_t		m_FileCount;
-	private:
-		PackResourceSet(PACK_RESOURCE_SET_HANDLE handle);
+		size_t						m_FileCount;
+	
 	public:
-		//从pack文件创建资源集
+		// Constructor
+		PackResourceSet(PACK_RESOURCE_SET_HANDLE handle);
+		
+		// Count resource files
+		size_t		GetFileCount()		{return m_FileCount;}
+		// Get resource file by index.
+		PackResource^	GetFileByIndex(size_t index);
+		// Get resource file by file name.
+		PackResource^	GetFileByName(String^ name);
+
+		// Create a set of resources from the pack file
 		static PackResourceSet^	CreateFromFile(String^ fileName);
-		//从pack文件夹创建资源集
+		// Create a set of resources from the pack files folder
 		static PackResourceSet^	CreateFromFolder(String^ fileName);
+		// Close resources
+		void		Close();
+
+		// Destructor
+		~PackResourceSet();
+		
 	};
 
-	// 文件集合创建器
+	// Package file creator
 	public ref class PackResourceSetCreater
 	{
-	public:
-		//添加一个要打包的文件。参数：文件在pack包中的名称，文件在硬盘上的原始路径
-		bool	AddFile(String^ fileName,String^ filePath);
-		//打包,参数：要生成的pack文件的版本，生成的pack文件的保存地址
-		bool	CreatePack(size_t version,String^ filePath);
 	private:
 		vector<PACK_RESOURCE_HANDLE>*	m_List;
 		size_t	m_Version;
+		int		m_level;
 	public:
-		PackResourceSetCreater(size_t version);
+		// Constructor
+		// Parameters:
+		//		version : pack file Version
+		//		level   : compress version
+		PackResourceSetCreater(size_t version, int level);
+		
+		// Add file to Package file.
+		// Parameters:
+		//		fileName : the name of the file in the pack
+		//		filePath : package file on your hard drive the original path
+		bool	AddFile(String^ fileName, String^ filePath);
+		// Create Package file.
+		// Parameters:
+		//		outputPath : Save path of generated pack files
+		bool	CreatePack(String^ outputPath);
+
+		// Destructor
 		~PackResourceSetCreater();
 	};
 }

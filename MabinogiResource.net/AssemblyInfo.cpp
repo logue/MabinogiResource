@@ -15,7 +15,7 @@ using namespace System::Security::Permissions;
 [assembly:AssemblyDescriptionAttribute("Mabinogi Resouce Library for .NET wrapper")];
 [assembly:AssemblyConfigurationAttribute("")];
 [assembly:AssemblyCompanyAttribute("")];
-[assembly:AssemblyProductAttribute("Mabinogi Resource Net")];
+[assembly:AssemblyProductAttribute("Mabinogi Resource .Net")];
 [assembly:AssemblyCopyrightAttribute("Copyright (c) 2011-2012")];
 [assembly:AssemblyTrademarkAttribute("")];
 [assembly:AssemblyCultureAttribute("")];

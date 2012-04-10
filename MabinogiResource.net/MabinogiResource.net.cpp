@@ -72,13 +72,25 @@ namespace MabinogiResource
 			wchar_t name[260];
 			ZeroMemory(name,260);
 			Resource_GetResourceName(m_Handle,name,260);
-			m_Name=gcnew String(name);
-			m_Size=Resource_GetDecompressedSize(m_Handle);
+			m_Name = gcnew String(name);
+			m_Size = Resource_GetDecompressedSize(m_Handle);
+			m_version = Resource_GetVersion(m_Handle);
+			/*
+			m_created = Resource_GetCreationTime(m_Handle);
+			m_accessed = Resource_GetLastAccessTime(m_Handle);
+			m_modified = Resource_GetLastWriteTime(m_handle);
+			*/
 		}
 		else
 		{
-			m_Name=gcnew String(L"");
-			m_Size=0;
+			m_Name = gcnew String(L"");
+			m_Size = 0;
+			m_version = 0;
+			/*
+			m_created = 0;
+			m_accessed = 0;
+			m_modified = 0;
+			*/
 		}
 	}
 
@@ -97,9 +109,10 @@ namespace MabinogiResource
 		return true;
 	}
 	//========================================================================================
-	PackResourceSetCreater::PackResourceSetCreater(size_t version)
+	PackResourceSetCreater::PackResourceSetCreater(size_t version, int level)
 	{
 		m_Version=version;
+		m_level=level;
 		m_List=new vector<PACK_RESOURCE_HANDLE>;
 	}
 
@@ -116,11 +129,11 @@ namespace MabinogiResource
 		}
 	}
 
-	bool PackResourceSetCreater::AddFile( String^ fileName,String^ filePath )
+	bool PackResourceSetCreater::AddFile( String^ fileName, String^ filePath )
 	{
 		pin_ptr<const wchar_t> path = PtrToStringChars(filePath);
 		pin_ptr<const wchar_t> name = PtrToStringChars(fileName);
-		PACK_RESOURCE_HANDLE hRes = CreateResourceFromFile(path,name, m_Version);
+		PACK_RESOURCE_HANDLE hRes = CreateResourceFromFile(path, name, m_Version);
 		if(hRes!=NULL)
 		{
 			m_List->push_back(hRes);
@@ -128,16 +141,17 @@ namespace MabinogiResource
 		return true;
 	}
 
-	bool PackResourceSetCreater::CreatePack( size_t version,String^ filePath )
+	bool PackResourceSetCreater::CreatePack( String^ outputPath )
 	{
-		pin_ptr<const wchar_t> path = PtrToStringChars(filePath);
+		pin_ptr<const wchar_t> path = PtrToStringChars(outputPath);
+		
 		if(m_List->size()==0)
 		{
-			PackResources(NULL,0, m_Version, path,0,0);
+			PackResources(NULL,0, m_Version, path, 0, 0, 0);
 		}
 		else
 		{
-			PackResources(&m_List->operator[](0),m_List->size(), m_Version, path,0,0);
+			PackResources(&m_List->operator[](0),m_List->size(), m_Version, path, 0, 0, m_level);
 		}		
 		return true;
 	}
