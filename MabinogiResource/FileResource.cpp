@@ -8,12 +8,12 @@ using namespace std;
 
 //////////////////////////////////////////////////////////////////////////
 
-IResource * IResource::CreateResourceFromFile(LPCTSTR lpszFile, LPCTSTR lpszResourceName, size_t version)
+IResource * IResource::CreateResourceFromFile(LPCTSTR lpszFile, LPCTSTR lpszResourceName, size_t version, int level)
 {
-	return new CFileResource(lpszFile, lpszResourceName, version);
+	return new CFileResource(lpszFile, lpszResourceName, version, level);
 }
 //////////////////////////////////////////////////////////////////////////
-CFileResource::CFileResource(LPCTSTR lpszFile, LPCTSTR lpszResourceName, size_t version)
+CFileResource::CFileResource(LPCTSTR lpszFile, LPCTSTR lpszResourceName, size_t version, int level)
 {
 	m_version = version;
 	m_file.Open(lpszFile, false);
@@ -75,7 +75,7 @@ size_t CFileResource::GetDecompressedContent(char * pBuffer, size_t size)
 
 }
 
-size_t CFileResource::GetCompressedContent(char * pBuffer, size_t size) 
+size_t CFileResource::GetCompressedContent(char * pBuffer, size_t size, int level) 
 {
 	vector<char> decompressContent(m_decompressedSize);
 
@@ -83,7 +83,7 @@ size_t CFileResource::GetCompressedContent(char * pBuffer, size_t size)
 
 	unsigned long encodeLen = size;
 
-	if (CUtility::ZlibCompress(pBuffer, &encodeLen, &decompressContent[0], m_decompressedSize))
+	if (CUtility::ZlibCompress(pBuffer, &encodeLen, &decompressContent[0], m_decompressedSize, 9))
 	{
 		m_compressedSize = encodeLen;
 	}

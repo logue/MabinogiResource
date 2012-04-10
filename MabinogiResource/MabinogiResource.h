@@ -88,7 +88,7 @@ MABINOGIRESOURCE_API int Resource_GetResourceNameLength(PACK_RESOURCE_HANDLE hRe
 MABINOGIRESOURCE_API size_t Resource_GetDecompressedContent(PACK_RESOURCE_HANDLE hResource, void* lpBuffer, size_t size);
 
 // Compressed Content
-MABINOGIRESOURCE_API size_t Resource_GetCompressedContent(PACK_RESOURCE_HANDLE hResource, void* lpBuffer, size_t size);
+MABINOGIRESOURCE_API size_t Resource_GetCompressedContent(PACK_RESOURCE_HANDLE hResource, void* lpBuffer, size_t size, int level);
 
 // Compressed size
 MABINOGIRESOURCE_API size_t Resource_GetCompressedSize(PACK_RESOURCE_HANDLE hResource);
@@ -110,7 +110,7 @@ MABINOGIRESOURCE_API FILETIME Resource_GetLastWriteTime(PACK_RESOURCE_HANDLE hRe
 //////////////////////////////////////////////////////////////////////////
 
 // Save as a pack file.
-MABINOGIRESOURCE_API void PackResources(PACK_RESOURCE_HANDLE * hResourceArray, size_t length, size_t version, LPCTSTR lpszPackFile, ProgressMonitorProc proc, DWORD dwParameter);
+MABINOGIRESOURCE_API void PackResources(PACK_RESOURCE_HANDLE * hResourceArray, size_t length, size_t version, LPCTSTR lpszPackFile, ProgressMonitorProc proc, DWORD dwParameter, int level);
 
 #ifdef __cplusplus
 }

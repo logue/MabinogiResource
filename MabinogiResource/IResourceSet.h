@@ -21,7 +21,7 @@ public:
 	// 获得资源总数
 	virtual size_t GetResourceCount() = 0;
 
-	static bool PackResources( IResource ** resources, size_t size, size_t version, LPCTSTR lpszPackFile, IProgressMonitor * pMonitor);
+	static bool PackResources( IResource ** resources, size_t size, size_t version, LPCTSTR lpszPackFile, IProgressMonitor * pMonitor, int level);
 
 	static IResourceSet * CreateResourceSetFromFolder(LPCTSTR lpszPackFolder);
 

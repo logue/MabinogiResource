@@ -12,7 +12,7 @@ class CWin32File;
 class CPackResource : public IResource
 {
 public:
-	CPackResource(tstring name, shared_ptr<CWin32File> spFile, ITEM_INFO * pInfo);
+	CPackResource(tstring name, shared_ptr<CWin32File> spFile, ITEM_INFO * pInfo, int level);
 
 	virtual ~CPackResource(void);
 
@@ -23,7 +23,7 @@ public:
 	virtual size_t GetDecompressedContent(char * pBuffer, size_t size) ;
 
 	// 返回解压前内容，每次返回新的容器
-	virtual size_t GetCompressedContent(char * pBuffer, size_t size) ;
+	virtual size_t GetCompressedContent(char * pBuffer, size_t size, int level);
 
 	// 返回压缩后大小
 	virtual size_t GetCompressedSize() ;
@@ -48,4 +48,5 @@ protected:
 	tstring m_name;
 	shared_ptr<CWin32File> m_spFile;
 	ITEM_INFO m_info;
+	int m_level;
 };

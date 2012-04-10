@@ -210,11 +210,11 @@ MABINOGIRESOURCE_API size_t Resource_GetDecompressedContent( PACK_RESOURCE_HANDL
 	return pSRes->m_pResource->GetDecompressedContent((char*)lpBuffer, size);
 }
 
-MABINOGIRESOURCE_API size_t Resource_GetCompressedContent( PACK_RESOURCE_HANDLE hResource, void* lpBuffer, size_t size )
+MABINOGIRESOURCE_API size_t Resource_GetCompressedContent( PACK_RESOURCE_HANDLE hResource, void* lpBuffer, size_t size , int level)
 {
 	SResource * pSRes = (SResource *) hResource;
 
-	return pSRes->m_pResource->GetCompressedContent((char*)lpBuffer, size);
+	return pSRes->m_pResource->GetCompressedContent((char*)lpBuffer, size, level);
 }
 
 MABINOGIRESOURCE_API size_t Resource_GetCompressedSize( PACK_RESOURCE_HANDLE hResource )
@@ -253,14 +253,14 @@ MABINOGIRESOURCE_API FILETIME Resource_GetLastWriteTime( PACK_RESOURCE_HANDLE hR
 	return pSRes->m_pResource->GetLastWriteTime();
 }
 
-MABINOGIRESOURCE_API PACK_RESOURCE_HANDLE CreateResourceFromFile( LPCTSTR lpszFile, LPCTSTR lpszResourceName, size_t version )
+MABINOGIRESOURCE_API PACK_RESOURCE_HANDLE CreateResourceFromFile( LPCTSTR lpszFile, LPCTSTR lpszResourceName, size_t version)
 {
-	IResource * pRes = IResource::CreateResourceFromFile(lpszFile, lpszResourceName, version);
+	IResource * pRes = IResource::CreateResourceFromFile(lpszFile, lpszResourceName, version, 0);
 	return new SResource(pRes);
 }
 
 
-MABINOGIRESOURCE_API void PackResources( PACK_RESOURCE_HANDLE * hResourceArray, size_t length, size_t version, LPCTSTR lpszPackFile, ProgressMonitorProc proc, DWORD dwParameter)
+MABINOGIRESOURCE_API void PackResources( PACK_RESOURCE_HANDLE * hResourceArray, size_t length, size_t version, LPCTSTR lpszPackFile, ProgressMonitorProc proc, DWORD dwParameter, int level)
 {
 
 	vector<IResource*> resources;
@@ -272,7 +272,7 @@ MABINOGIRESOURCE_API void PackResources( PACK_RESOURCE_HANDLE * hResourceArray, 
 
 	ProgressMonitor monitor(proc, dwParameter);
 
-	IResourceSet::PackResources(&resources[0], resources.size(), version, lpszPackFile, &monitor);
+	IResourceSet::PackResources(&resources[0], resources.size(), version, lpszPackFile, &monitor, level);
 
 }
 

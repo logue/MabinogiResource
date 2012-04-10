@@ -2,8 +2,8 @@
 #include "Utility.h"
 
 #include "MersenneTwister.h"
-#include "zlib-1.2.6/zlib.h"
 
+#include "zlib-1.2.6/zlib.h"
 //#pragma comment(lib, "zlib125-dll/lib/zdll.lib")
 
 CUtility::CUtility(void)
@@ -82,7 +82,7 @@ bool CUtility::ZlibUncompress( void * dest, unsigned long * destLen, const void 
 	return uncompress((Bytef *)dest, destLen, (Bytef *)source, sourceLen) == Z_OK;
 }
 
-bool CUtility::ZlibCompress( void * dest, unsigned long * destLen, const void * source, unsigned long sourceLen )
+bool CUtility::ZlibCompress( void * dest, unsigned long * destLen, const void * source, unsigned long sourceLen, int level=Z_DEFAULT_COMPRESSION)
 {
-	return compress((Bytef *)dest, destLen, (Bytef *)source, sourceLen) == Z_OK;
+	return compress2((Bytef *)dest, destLen, (Bytef *)source, sourceLen, level) == Z_OK;
 }

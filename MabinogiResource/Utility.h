@@ -38,5 +38,5 @@ public:
 		const void * source, unsigned long sourceLen);
 
 	static bool ZlibCompress (void * dest, unsigned long * destLen,
-		const void * source, unsigned long sourceLen);
+		const void * source, unsigned long sourceLen, int level);
 };

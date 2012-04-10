@@ -18,7 +18,7 @@ public:
 	virtual size_t GetDecompressedContent(char * pBuffer, size_t size) = 0;
 
 	// 返回解压前内容（未加密），每次返回新的容器
-	virtual size_t GetCompressedContent(char * pBuffer, size_t size) = 0;
+	virtual size_t GetCompressedContent(char * pBuffer, size_t size, int level) = 0;
 
 	// 返回压缩后大小
 	virtual size_t GetCompressedSize() = 0;
@@ -39,5 +39,5 @@ public:
 	virtual FILETIME GetLastWriteTime() = 0;
 
 	// 从文件创建一个资源项
-	static IResource * CreateResourceFromFile(LPCTSTR lpszFile, LPCTSTR lpszResourceName, size_t version);
+	static IResource * CreateResourceFromFile(LPCTSTR lpszFile, LPCTSTR lpszResourceName, size_t version, int level);
 };

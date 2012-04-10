@@ -10,7 +10,7 @@ class CFileResource : public IResource
 {
 public:
 	// 从一个文件创建IResource对象
-	CFileResource(LPCTSTR lpszFile, LPCTSTR lpszResourceName, size_t version);
+	CFileResource(LPCTSTR lpszFile, LPCTSTR lpszResourceName, size_t version, int level);
 
 	virtual ~CFileResource(void);
 
@@ -21,7 +21,7 @@ public:
 	virtual size_t GetDecompressedContent(char * pBuffer, size_t size) ;
 
 	// 返回解压前内容，每次返回新的容器
-	virtual size_t GetCompressedContent(char * pBuffer, size_t size) ;
+	virtual size_t GetCompressedContent(char * pBuffer, size_t size, int level) ;
 
 	// 返回压缩后大小
 	virtual size_t GetCompressedSize() ;

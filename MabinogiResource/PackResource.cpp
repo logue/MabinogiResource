@@ -5,11 +5,12 @@
 #include "Win32File.h"
 
 
-CPackResource::CPackResource( tstring name, shared_ptr<CWin32File> spFile, ITEM_INFO * pInfo )
+CPackResource::CPackResource( tstring name, shared_ptr<CWin32File> spFile, ITEM_INFO * pInfo, int level)
 {
 	m_name = name;
 	m_spFile = spFile;
 	m_info = *pInfo;
+	m_level = level;
 }
 
 CPackResource::~CPackResource(void)
@@ -55,7 +56,7 @@ size_t CPackResource::GetDecompressedContent(char * pBuffer, size_t size)
 {
 	vector<char> compressContent(m_info.compress_size);
 
-	GetCompressedContent(&compressContent[0], m_info.compress_size);
+	GetCompressedContent(&compressContent[0], m_info.compress_size, 0);
 
 	unsigned long decodeLen = size;
 
@@ -64,7 +65,7 @@ size_t CPackResource::GetDecompressedContent(char * pBuffer, size_t size)
 	return decodeLen;
 }
 
-size_t CPackResource::GetCompressedContent(char * pBuffer, size_t size) 
+size_t CPackResource::GetCompressedContent(char * pBuffer, size_t size, int level) 
 {
 	m_spFile->Seek(m_info.offset, FILE_BEGIN);
 	int tmp = m_spFile->Read( pBuffer, m_info.compress_size );

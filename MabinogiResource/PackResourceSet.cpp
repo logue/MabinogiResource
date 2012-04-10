@@ -66,7 +66,7 @@ IResourceSet * IResourceSet::CreateResourceSetFromFile(LPCTSTR lpszFile)
 	return pResource;
 }
 
-bool IResourceSet::PackResources(IResource ** resources, size_t size, size_t version, LPCTSTR lpszPackFile, IProgressMonitor * pMonitor)
+bool IResourceSet::PackResources(IResource ** resources, size_t size, size_t version, LPCTSTR lpszPackFile, IProgressMonitor * pMonitor, int level)
 {
 	NullProgressMonitor nullProgressMonitor;
 	if (pMonitor == NULL)
@@ -133,7 +133,7 @@ bool IResourceSet::PackResources(IResource ** resources, size_t size, size_t ver
 
 		size_t compressedSize = resources[i]->GetCompressedSize();
 		vector<char> compressedContent(compressedSize);
-		compressedSize = resources[i]->GetCompressedContent(&compressedContent[0], compressedSize);
+		compressedSize = resources[i]->GetCompressedContent(&compressedContent[0], compressedSize,level);
 		compressedContent.resize(compressedSize);
 
 		// 写入文件需要加密
@@ -288,7 +288,7 @@ bool CPackResourceSet::Open( LPCTSTR lpszPackFile )
 		// 指针定位到下一项
 		pTemp += sizeof(ITEM_INFO);
 
-		shared_ptr<IResource> spResource(new CPackResource(name, spFile, pInfo));
+		shared_ptr<IResource> spResource(new CPackResource(name, spFile, pInfo, 0));
 		m_Resources.push_back( spResource );
 	}
 
