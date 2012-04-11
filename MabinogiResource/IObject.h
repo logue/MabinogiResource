@@ -5,16 +5,13 @@
 class MABINOGIRESOURCE_API IObject
 {
 public:
+	// Constructor
+	IObject(void){}
 
-	IObject(void)
-	{
-	}
+	// Destructor
+	virtual ~IObject(void){}
 
-	virtual ~IObject(void)
-	{
-	}
-
-	// 进行释放操作
+	// The release operation
 	virtual void Release() = 0;
 
 private:

@@ -12,11 +12,11 @@ using namespace System::Security::Permissions;
 // 与程序集关联的信息。
 //
 [assembly:AssemblyTitleAttribute("Mabinogi Resource .Net")];
-[assembly:AssemblyDescriptionAttribute("Mabinogi Resouce Library for .NET wrapper")];
+[assembly:AssemblyDescriptionAttribute("Mabinogi Package File Management API Library for .NET")];
 [assembly:AssemblyConfigurationAttribute("")];
 [assembly:AssemblyCompanyAttribute("")];
 [assembly:AssemblyProductAttribute("Mabinogi Resource .Net")];
-[assembly:AssemblyCopyrightAttribute("Copyright (c) 2011-2012")];
+[assembly:AssemblyCopyrightAttribute("Copyright (c) 2011-2012 DarknessTM / Logue")];
 [assembly:AssemblyTrademarkAttribute("")];
 [assembly:AssemblyCultureAttribute("")];
 
