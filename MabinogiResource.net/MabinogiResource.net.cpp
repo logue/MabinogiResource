@@ -1,9 +1,6 @@
-// 这是主 DLL 文件。
-
-#include "stdafx.h"
-#include "MabinogiResource.net.h"
 #include <string>
-#include < vcclr.h >
+#include <vcclr.h>
+#include "MabinogiResource.net.h"
 using namespace std;
 #pragma comment(lib,"MabinogiResource.lib")
 
@@ -30,7 +27,7 @@ namespace MabinogiResource
 	string	ToUTF8(const wchar_t* text)
 	{
 		size_t len=wcslen(text);
-		//获取需要的输出缓冲区长度
+		// Get output buffer length
 		int		buffersize=WideCharToMultiByte(CP_UTF8,0,text,len,0,0,0,0);
 		char*	g_StringBuffer=new char[buffersize+1];
 		WideCharToMultiByte(CP_UTF8,0,text,(int)len,g_StringBuffer,buffersize+1,0,0);
@@ -55,15 +52,6 @@ namespace MabinogiResource
 		return str;
 	}
 	//========================================================================================
-	void PackResource::Close()
-	{
-		if(m_Handle!=NULL)
-		{
-			CloseResource(m_Handle);
-			m_Handle=NULL;
-		}
-	}
-
 	PackResource::PackResource( PACK_RESOURCE_HANDLE handle )
 	{
 		m_Handle=handle;
@@ -74,23 +62,18 @@ namespace MabinogiResource
 			Resource_GetResourceName(m_Handle,name,260);
 			m_Name = gcnew String(name);
 			m_Size = Resource_GetDecompressedSize(m_Handle);
-			m_version = Resource_GetVersion(m_Handle);
-			/*
+			m_Version = Resource_GetVersion(m_Handle);
+/*
 			m_created = Resource_GetCreationTime(m_Handle);
 			m_accessed = Resource_GetLastAccessTime(m_Handle);
-			m_modified = Resource_GetLastWriteTime(m_handle);
-			*/
+			m_modified = Resource_GetLastWriteTime(m_Handle);
+*/
 		}
 		else
 		{
 			m_Name = gcnew String(L"");
 			m_Size = 0;
-			m_version = 0;
-			/*
-			m_created = 0;
-			m_accessed = 0;
-			m_modified = 0;
-			*/
+			m_Version = 0;
 		}
 	}
 
@@ -98,15 +81,22 @@ namespace MabinogiResource
 	{
 		Close();
 	}
-
-	bool PackResource::GetData( array<Byte>^ buffer )
+	size_t PackResource::GetData( array<Byte>^ buffer )
 	{
 		if(m_Handle==NULL) return false;
 		if(buffer->Length<(int)m_Size) return false;
 		pin_ptr<Byte> p =  &buffer[ 0 ];
 		Byte * np = p;
-		Resource_GetDecompressedContent(m_Handle,np,m_Size);
-		return true;
+		return Resource_GetDecompressedContent(m_Handle,np,m_Size);
+	}
+
+	void PackResource::Close()
+	{
+		if(m_Handle!=NULL)
+		{
+			CloseResource(m_Handle);
+			m_Handle=NULL;
+		}
 	}
 	//========================================================================================
 	PackResourceSetCreater::PackResourceSetCreater(size_t version, int level)

@@ -5,35 +5,31 @@
 class MABINOGIRESOURCE_API IProgressMonitor
 {
 public:
+	// Constructor
+	IProgressMonitor(void){}
 
-	IProgressMonitor(void)
-	{
-	}
+	// Destructor
+	virtual ~IProgressMonitor(void){}
 
-	virtual ~IProgressMonitor(void)
-	{
-	}
-
-
-	// 开始一个作业
+	// Start a job
 	virtual void BeginWork(LPCTSTR lpszName, int totalWork ) = 0;
 
-	// 增加作业步进
+	// Increase operational step
 	virtual void Worked(int work) = 0;
 
-	// 结束作业
+	// End of the job
 	virtual void Done() = 0;
 
-	// 设置当前作业的名称
+	// Set the name of the current job
 	virtual void SetTaskName(LPCTSTR name) = 0;
 
-	// 设置当前作业的副作业名称
+	// Set the sub name of the current job
 	virtual void SetSubTaskName(LPCTSTR lpszName) = 0;
 
-	// 返回当前作业是否正在取消中
+	// Back to the current job is being canceled
 	virtual bool IsCanceled() = 0;
 
-	// 设置当前作业是否取消
+	// Set the current job whether to cancel
 	virtual void SetCanceled(bool value) = 0;
 
 private:

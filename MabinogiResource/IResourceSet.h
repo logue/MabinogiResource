@@ -7,18 +7,19 @@
 class MABINOGIRESOURCE_API IResourceSet : public IObject
 {
 public:
-
+	// Constructor
 	IResourceSet(void){}
-
+	
+	// Destructor
 	virtual ~IResourceSet(void){}
 
-	// 找到指定全名的资源
+	// Find to specify the full name of the resource
 	virtual int FindResourceIndex(LPCTSTR lpszName) = 0;
 
-	// 获得一个资源
+	// Access to a resource
 	virtual IResource * GetResource(size_t index) = 0;
 
-	// 获得资源总数
+	// Total number of resources
 	virtual size_t GetResourceCount() = 0;
 
 	static bool PackResources( IResource ** resources, size_t size, size_t version, LPCTSTR lpszPackFile, IProgressMonitor * pMonitor, int level);

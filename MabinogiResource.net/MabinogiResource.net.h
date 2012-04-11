@@ -2,6 +2,7 @@
 
 #pragma once
 #include <Windows.h>
+
 #include "../MabinogiResource/MabinogiResource.h"
 #include <vector>
 
@@ -9,6 +10,7 @@ using namespace std;
 using namespace System;
 using namespace System::Text;
 using namespace System::Collections::Generic;
+using namespace System::Runtime::InteropServices::ComTypes;
 
 namespace MabinogiResource 
 {
@@ -19,26 +21,29 @@ namespace MabinogiResource
 		PACK_RESOURCE_HANDLE	m_Handle;
 		String^					m_Name;
 		size_t					m_Size;
-		size_t					m_version;
+		size_t					m_Version;
+/*
+		FILETIME				m_created;
+		FILETIME				m_accessed;
+		FILETIME				m_modified;
+*/
 	public:
 		// Constructor
 		PackResource(PACK_RESOURCE_HANDLE handle);
-
-		// Get file name
-		String^	GetName()		{return m_Name;}
-		// Get file size
-		size_t	GetSize()		{return m_Size;}
-		// Get file version
-		size_t	GetVersion()	{return m_version;}
-
-		// Access to the data file
-		bool	GetData(array<Byte>^ buffer);
-
-		// Close the file data
-		void	Close();
-	
 		// Destructor
 		~PackResource();
+
+		// Get file name
+		String^		GetName()		{ return m_Name; }
+		// Get file size
+		size_t		GetSize()		{ return m_Size; }
+		// Get file version
+		size_t		GetVersion()	{ return m_Version; }
+
+		// Access to the data file
+		size_t		GetData(array<Byte>^ buffer);
+		// Close the file data
+		void	Close();
 	};
 
 	// Package File
@@ -51,7 +56,9 @@ namespace MabinogiResource
 	public:
 		// Constructor
 		PackResourceSet(PACK_RESOURCE_SET_HANDLE handle);
-		
+		// Destructor
+		~PackResourceSet();
+
 		// Count resource files
 		size_t		GetFileCount()		{return m_FileCount;}
 		// Get resource file by index.
@@ -63,12 +70,9 @@ namespace MabinogiResource
 		static PackResourceSet^	CreateFromFile(String^ fileName);
 		// Create a set of resources from the pack files folder
 		static PackResourceSet^	CreateFromFolder(String^ fileName);
-		// Close resources
-		void		Close();
 
-		// Destructor
-		~PackResourceSet();
-		
+		// Close resources
+		void	Close();
 	};
 
 	// Package file creator
@@ -82,9 +86,11 @@ namespace MabinogiResource
 		// Constructor
 		// Parameters:
 		//		version : pack file Version
-		//		level   : compress version
+		//		level   : compress level
 		PackResourceSetCreater(size_t version, int level);
-		
+		// Destructor
+		~PackResourceSetCreater();
+
 		// Add file to Package file.
 		// Parameters:
 		//		fileName : the name of the file in the pack
@@ -92,10 +98,7 @@ namespace MabinogiResource
 		bool	AddFile(String^ fileName, String^ filePath);
 		// Create Package file.
 		// Parameters:
-		//		outputPath : Save path of generated pack files
+		//		outputPath : Save path of generated pack file
 		bool	CreatePack(String^ outputPath);
-
-		// Destructor
-		~PackResourceSetCreater();
 	};
 }

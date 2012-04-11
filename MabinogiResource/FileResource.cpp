@@ -83,7 +83,7 @@ size_t CFileResource::GetCompressedContent(char * pBuffer, size_t size, int leve
 
 	unsigned long encodeLen = size;
 
-	if (CUtility::ZlibCompress(pBuffer, &encodeLen, &decompressContent[0], m_decompressedSize, 9))
+	if (CUtility::ZlibCompress(pBuffer, &encodeLen, &decompressContent[0], m_decompressedSize, level))
 	{
 		m_compressedSize = encodeLen;
 	}

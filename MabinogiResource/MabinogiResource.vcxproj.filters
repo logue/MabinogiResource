@@ -15,44 +15,44 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
-    <Filter Include="Resource\Source">
+    <Filter Include="Source">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
-      <Filter>Resource\Source</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="FileResource.cpp">
-      <Filter>Resource\Source</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="MabinogiResource.cpp">
-      <Filter>Resource\Source</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="MersenneTwister.cpp">
-      <Filter>Resource\Source</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="PackResource.cpp">
-      <Filter>Resource\Source</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="PackResourceSet.cpp">
-      <Filter>Resource\Source</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="ResourceFileSystem.cpp">
-      <Filter>Resource\Source</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
-      <Filter>Resource\Source</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Utility.cpp">
-      <Filter>Resource\Source</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Win32File.cpp">
-      <Filter>Resource\Source</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="NullProgressMonitor.cpp">
-      <Filter>Resource\Source</Filter>
+      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="zlib-1.2.6\adler32.c">
       <Filter>Library\zlib</Filter>
