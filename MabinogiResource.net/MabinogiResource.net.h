@@ -10,7 +10,6 @@ using namespace std;
 using namespace System;
 using namespace System::Text;
 using namespace System::Collections::Generic;
-using namespace System::Runtime::InteropServices::ComTypes;
 
 namespace MabinogiResource 
 {
@@ -22,11 +21,9 @@ namespace MabinogiResource
 		String^					m_Name;
 		size_t					m_Size;
 		size_t					m_Version;
-/*
-		FILETIME				m_created;
-		FILETIME				m_accessed;
-		FILETIME				m_modified;
-*/
+		System::DateTime		m_created;
+		System::DateTime		m_accessed;
+		System::DateTime		m_modified;
 	public:
 		// Constructor
 		PackResource(PACK_RESOURCE_HANDLE handle);
@@ -39,9 +36,16 @@ namespace MabinogiResource
 		size_t		GetSize()		{ return m_Size; }
 		// Get file version
 		size_t		GetVersion()	{ return m_Version; }
-
-		// Access to the data file
+		// Get file content
 		size_t		GetData(array<Byte>^ buffer);
+
+		// Get file created time
+		System::DateTime		GetCreated()	{ return m_created; }
+		// Get file last accessed time
+		System::DateTime		GetAccessed()	{ return m_accessed; }
+		// Get file last modified time
+		System::DateTime		GetModified()	{ return m_modified; }
+
 		// Close the file data
 		void	Close();
 	};

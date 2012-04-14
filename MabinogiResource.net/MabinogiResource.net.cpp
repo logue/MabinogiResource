@@ -63,17 +63,18 @@ namespace MabinogiResource
 			m_Name = gcnew String(name);
 			m_Size = Resource_GetDecompressedSize(m_Handle);
 			m_Version = Resource_GetVersion(m_Handle);
-/*
-			m_created = Resource_GetCreationTime(m_Handle);
-			m_accessed = Resource_GetLastAccessTime(m_Handle);
-			m_modified = Resource_GetLastWriteTime(m_Handle);
-*/
+			m_created = System::DateTime( *((INT64*)&Resource_GetCreationTime(m_Handle)) ).AddYears( 1600 );
+			m_accessed = System::DateTime( *((INT64*)&Resource_GetLastAccessTime(m_Handle)) ).AddYears( 1600 );
+			m_modified = System::DateTime( *((INT64*)&Resource_GetLastWriteTime(m_Handle)) ).AddYears( 1600 );
 		}
 		else
 		{
 			m_Name = gcnew String(L"");
 			m_Size = 0;
 			m_Version = 0;
+			m_created = System::DateTime(0).AddYears( 1600 );
+			m_accessed = System::DateTime(0).AddYears( 1600 );
+			m_modified = System::DateTime(0).AddYears( 1600 );
 		}
 	}
 
