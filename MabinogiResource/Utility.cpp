@@ -3,9 +3,6 @@
 
 #include "MersenneTwister.h"
 
-#include "zlib-1.2.6/zlib.h"
-//#pragma comment(lib, "zlib125-dll/lib/zdll.lib")
-
 CUtility::CUtility(void)
 {
 }

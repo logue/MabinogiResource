@@ -26,25 +26,26 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <PlatformToolset>Windows7.1SDK</PlatformToolset>
     <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+    <UseOfAtl>Static</UseOfAtl>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="WinDDK.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="WinDDK.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
@@ -61,9 +62,11 @@
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\WinDDK\7600.16385.1\inc\atl71;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\WinDDK\7600.16385.1\inc\atl71;C:\WinDDK\7600.16385.1\inc\mfc42;$(IncludePath)</IncludePath>
     <ReferencePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ReferencePath)</ReferencePath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\WinDDK\7600.16385.1\lib\ATL\i386;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\WinDDK\7600.16385.1\lib\ATL\i386;C:\WinDDK\7600.16385.1\lib\Mfc\i386;$(LibraryPath)</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\WinDDK\7600.16385.1\inc\atl71;C:\WinDDK\7600.16385.1\inc\mfc42;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\WinDDK\7600.16385.1\lib\ATL\i386;C:\WinDDK\7600.16385.1\lib\Mfc\i386;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -82,6 +85,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <ShowProgress>LinkVerboseLib</ShowProgress>
     </Link>
     <PostBuildEvent>
       <Command>md "$(TargetDir)include"
@@ -99,18 +103,18 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MABINOGIRESOURCE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -118,6 +122,7 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
       <Version>
       </Version>
       <LinkErrorReporting>QueueForNextLogin</LinkErrorReporting>
+      <ShowProgress>LinkVerboseLib</ShowProgress>
     </Link>
     <PostBuildEvent>
       <Command>md "$(TargetDir)include"
@@ -132,6 +137,7 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     <ResourceCompile>
       <ShowProgress>true</ShowProgress>
     </ResourceCompile>
+    <Manifest />
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -155,21 +161,21 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     </ClCompile>
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="Win32File.cpp" />
-    <ClCompile Include="zlib-1.2.6\adler32.c" />
-    <ClCompile Include="zlib-1.2.6\compress.c" />
-    <ClCompile Include="zlib-1.2.6\crc32.c" />
-    <ClCompile Include="zlib-1.2.6\deflate.c" />
-    <ClCompile Include="zlib-1.2.6\gzclose.c" />
-    <ClCompile Include="zlib-1.2.6\gzlib.c" />
-    <ClCompile Include="zlib-1.2.6\gzread.c" />
-    <ClCompile Include="zlib-1.2.6\gzwrite.c" />
-    <ClCompile Include="zlib-1.2.6\infback.c" />
-    <ClCompile Include="zlib-1.2.6\inffast.c" />
-    <ClCompile Include="zlib-1.2.6\inflate.c" />
-    <ClCompile Include="zlib-1.2.6\inftrees.c" />
-    <ClCompile Include="zlib-1.2.6\trees.c" />
-    <ClCompile Include="zlib-1.2.6\uncompr.c" />
-    <ClCompile Include="zlib-1.2.6\zutil.c" />
+    <ClCompile Include="zlib-1.2.7\adler32.c" />
+    <ClCompile Include="zlib-1.2.7\compress.c" />
+    <ClCompile Include="zlib-1.2.7\crc32.c" />
+    <ClCompile Include="zlib-1.2.7\deflate.c" />
+    <ClCompile Include="zlib-1.2.7\gzclose.c" />
+    <ClCompile Include="zlib-1.2.7\gzlib.c" />
+    <ClCompile Include="zlib-1.2.7\gzread.c" />
+    <ClCompile Include="zlib-1.2.7\gzwrite.c" />
+    <ClCompile Include="zlib-1.2.7\infback.c" />
+    <ClCompile Include="zlib-1.2.7\inffast.c" />
+    <ClCompile Include="zlib-1.2.7\inflate.c" />
+    <ClCompile Include="zlib-1.2.7\inftrees.c" />
+    <ClCompile Include="zlib-1.2.7\trees.c" />
+    <ClCompile Include="zlib-1.2.7\uncompr.c" />
+    <ClCompile Include="zlib-1.2.7\zutil.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ExportMacro.h" />
@@ -191,17 +197,17 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     <ClInclude Include="types.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="Win32File.h" />
-    <ClInclude Include="zlib-1.2.6\crc32.h" />
-    <ClInclude Include="zlib-1.2.6\deflate.h" />
-    <ClInclude Include="zlib-1.2.6\gzguts.h" />
-    <ClInclude Include="zlib-1.2.6\inffast.h" />
-    <ClInclude Include="zlib-1.2.6\inffixed.h" />
-    <ClInclude Include="zlib-1.2.6\inflate.h" />
-    <ClInclude Include="zlib-1.2.6\inftrees.h" />
-    <ClInclude Include="zlib-1.2.6\trees.h" />
-    <ClInclude Include="zlib-1.2.6\zconf.h" />
-    <ClInclude Include="zlib-1.2.6\zlib.h" />
-    <ClInclude Include="zlib-1.2.6\zutil.h" />
+    <ClInclude Include="zlib-1.2.7\crc32.h" />
+    <ClInclude Include="zlib-1.2.7\deflate.h" />
+    <ClInclude Include="zlib-1.2.7\gzguts.h" />
+    <ClInclude Include="zlib-1.2.7\inffast.h" />
+    <ClInclude Include="zlib-1.2.7\inffixed.h" />
+    <ClInclude Include="zlib-1.2.7\inflate.h" />
+    <ClInclude Include="zlib-1.2.7\inftrees.h" />
+    <ClInclude Include="zlib-1.2.7\trees.h" />
+    <ClInclude Include="zlib-1.2.7\zconf.h" />
+    <ClInclude Include="zlib-1.2.7\zlib.h" />
+    <ClInclude Include="zlib-1.2.7\zutil.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuildStep Include="zlib\zlib.lib">
@@ -212,7 +218,6 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
-    <None Include="zlib-1.2.6\README" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MabinogiResource.rc" />

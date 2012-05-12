@@ -54,49 +54,49 @@
     <ClCompile Include="NullProgressMonitor.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\adler32.c">
+    <ClCompile Include="zlib-1.2.7\gzread.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\compress.c">
+    <ClCompile Include="zlib-1.2.7\gzwrite.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\crc32.c">
+    <ClCompile Include="zlib-1.2.7\infback.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\deflate.c">
+    <ClCompile Include="zlib-1.2.7\inffast.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\gzclose.c">
+    <ClCompile Include="zlib-1.2.7\inflate.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\gzlib.c">
+    <ClCompile Include="zlib-1.2.7\inftrees.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\gzread.c">
+    <ClCompile Include="zlib-1.2.7\trees.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\gzwrite.c">
+    <ClCompile Include="zlib-1.2.7\uncompr.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\infback.c">
+    <ClCompile Include="zlib-1.2.7\zutil.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\inffast.c">
+    <ClCompile Include="zlib-1.2.7\adler32.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\inflate.c">
+    <ClCompile Include="zlib-1.2.7\compress.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\inftrees.c">
+    <ClCompile Include="zlib-1.2.7\crc32.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\trees.c">
+    <ClCompile Include="zlib-1.2.7\deflate.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\uncompr.c">
+    <ClCompile Include="zlib-1.2.7\gzclose.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.6\zutil.c">
+    <ClCompile Include="zlib-1.2.7\gzlib.c">
       <Filter>Library\zlib</Filter>
     </ClCompile>
   </ItemGroup>
@@ -158,45 +158,42 @@
     <ClInclude Include="resource.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.6\crc32.h">
+    <ClInclude Include="zlib-1.2.7\crc32.h">
       <Filter>Library\zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.6\deflate.h">
+    <ClInclude Include="zlib-1.2.7\deflate.h">
       <Filter>Library\zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.6\gzguts.h">
+    <ClInclude Include="zlib-1.2.7\gzguts.h">
       <Filter>Library\zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.6\inffast.h">
+    <ClInclude Include="zlib-1.2.7\inffast.h">
       <Filter>Library\zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.6\inffixed.h">
+    <ClInclude Include="zlib-1.2.7\inffixed.h">
       <Filter>Library\zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.6\inflate.h">
+    <ClInclude Include="zlib-1.2.7\inflate.h">
       <Filter>Library\zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.6\inftrees.h">
+    <ClInclude Include="zlib-1.2.7\inftrees.h">
       <Filter>Library\zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.6\trees.h">
+    <ClInclude Include="zlib-1.2.7\trees.h">
       <Filter>Library\zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.6\zconf.h">
+    <ClInclude Include="zlib-1.2.7\zconf.h">
       <Filter>Library\zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.6\zlib.h">
+    <ClInclude Include="zlib-1.2.7\zlib.h">
       <Filter>Library\zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.6\zutil.h">
+    <ClInclude Include="zlib-1.2.7\zutil.h">
       <Filter>Library\zlib</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
-    <None Include="zlib-1.2.6\README">
-      <Filter>Library\zlib</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MabinogiResource.rc">

@@ -3,6 +3,8 @@
 #include "IResource.h"
 #include <memory>
 #include <vector>
+#include "zlib-1.2.7/zlib.h"
+//#pragma comment(lib, "zlib125-dll/lib/zdll.lib")
 
 using namespace std;
 using namespace std::tr1;
