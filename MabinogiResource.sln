@@ -11,15 +11,20 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
+		Release Static|Win32 = Release Static|Win32
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Debug|Win32.ActiveCfg = Release|Win32
 		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Debug|Win32.Build.0 = Release|Win32
+		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Release Static|Win32.ActiveCfg = Release Static|Win32
+		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Release Static|Win32.Build.0 = Release Static|Win32
 		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Release|Win32.ActiveCfg = Release|Win32
 		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Release|Win32.Build.0 = Release|Win32
 		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Debug|Win32.ActiveCfg = Release|Win32
 		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Debug|Win32.Build.0 = Release|Win32
+		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Release Static|Win32.ActiveCfg = Release Static|Win32
+		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Release Static|Win32.Build.0 = Release Static|Win32
 		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Release|Win32.ActiveCfg = Release|Win32
 		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
