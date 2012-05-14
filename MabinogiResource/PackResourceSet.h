@@ -4,6 +4,8 @@
 #include <memory>
 #include <vector>
 #include <string>
+#include <algorithm>
+#include <iostream>
 
 using namespace std;
 using namespace std::tr1;
@@ -33,3 +35,6 @@ public:
 protected:
 	vector<shared_ptr<IResource>> m_Resources;
 };
+
+static char* ConvertToANSI(const wchar_t* szUnicode);
+static wchar_t* ConvertToWide(const char* text);

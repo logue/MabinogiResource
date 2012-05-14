@@ -7,10 +7,6 @@
 #include "Utility.h"
 #include "NullProgressMonitor.h"
 
-#include <atlbase.h>
-#include <atlconv.h>
-#include <algorithm>
-
 //////////////////////////////////////////////////////////////////////////
 shared_ptr< vector<char> > GetNameChars(LPCSTR lpszName)
 {
@@ -110,7 +106,7 @@ bool IResourceSet::PackResources(IResource ** resources, size_t size, size_t ver
 	vector< shared_ptr<vector<char> > > array_item_name_chars;
 	for (size_t i = 0; i < size;i++)
 	{
-		shared_ptr< vector<char> > namechars = GetNameChars(CT2A(resources[i]->GetName()));
+		shared_ptr< vector<char> > namechars = GetNameChars(ConvertToANSI(resources[i]->GetName()));
 
 		array_item_name_chars.push_back(namechars);
 
@@ -270,11 +266,13 @@ bool CPackResourceSet::Open( LPCTSTR lpszPackFile )
 		tstring name;
 		if ( pItemName->len_or_type <= 0x04 )
 		{
-			name = CA2T(pItemName->sz_ansi_name);
+			//name = CA2T(pItemName->sz_ansi_name);
+			name = ConvertToWide(pItemName->sz_ansi_name);
 		}
 		else // 0x05
 		{
-			name = CA2T(pItemName->sz_ansi_name2);
+			//name = CA2T(pItemName->sz_ansi_name2);
+			name = ConvertToWide(pItemName->sz_ansi_name2);
 		}
 
 		// 指针跨越名称定义区
@@ -318,3 +316,25 @@ void CPackResourceSet::Release()
 	delete this;
 }
 
+static char* ConvertToANSI(const wchar_t* szUnicode){
+	LPSTR  szAnsi;
+	int len = ::WideCharToMultiByte(CP_THREAD_ACP, 0, szUnicode, -1, NULL, 0, NULL, NULL);
+	szAnsi = (LPSTR) malloc(len + 1);
+	memset(szAnsi, 0, len + 1);
+	::WideCharToMultiByte(CP_THREAD_ACP, 0, szUnicode, -1, szAnsi, len, NULL, NULL);
+	
+	return szAnsi; 
+}
+
+static wchar_t* ConvertToWide(const char* text){
+	wchar_t* szUnicode = NULL;
+    if (!text || !text[0]) return szUnicode;
+    const int wlen = ::MultiByteToWideChar(CP_THREAD_ACP, 0, text, -1, NULL, 0);
+    if (!wlen) return szUnicode;
+
+    szUnicode = new wchar_t[wlen + 1];
+    if (::MultiByteToWideChar(CP_THREAD_ACP, 0, text, -1, szUnicode, wlen))
+        szUnicode[wlen] = L'\0';
+
+    return szUnicode;
+}
