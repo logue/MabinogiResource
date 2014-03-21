@@ -14,7 +14,7 @@ using namespace System::Security::Permissions;
 [assembly:AssemblyConfigurationAttribute("")];
 [assembly:AssemblyCompanyAttribute("")];
 [assembly:AssemblyProductAttribute("Mabinogi Resource .Net")];
-[assembly:AssemblyCopyrightAttribute("Copyright (c) 2011-2012 DarknessTM / Logue")];
+[assembly:AssemblyCopyrightAttribute("Copyright (c) 2011-2012,2014 DarknessTM / Logue")];
 [assembly:AssemblyTrademarkAttribute("")];
 [assembly:AssemblyCultureAttribute("")];
 
