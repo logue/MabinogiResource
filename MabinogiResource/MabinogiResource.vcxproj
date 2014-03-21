@@ -33,7 +33,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -198,21 +198,21 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     </ClCompile>
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="Win32File.cpp" />
-    <ClCompile Include="zlib-1.2.7\adler32.c" />
-    <ClCompile Include="zlib-1.2.7\compress.c" />
-    <ClCompile Include="zlib-1.2.7\crc32.c" />
-    <ClCompile Include="zlib-1.2.7\deflate.c" />
-    <ClCompile Include="zlib-1.2.7\gzclose.c" />
-    <ClCompile Include="zlib-1.2.7\gzlib.c" />
-    <ClCompile Include="zlib-1.2.7\gzread.c" />
-    <ClCompile Include="zlib-1.2.7\gzwrite.c" />
-    <ClCompile Include="zlib-1.2.7\infback.c" />
-    <ClCompile Include="zlib-1.2.7\inffast.c" />
-    <ClCompile Include="zlib-1.2.7\inflate.c" />
-    <ClCompile Include="zlib-1.2.7\inftrees.c" />
-    <ClCompile Include="zlib-1.2.7\trees.c" />
-    <ClCompile Include="zlib-1.2.7\uncompr.c" />
-    <ClCompile Include="zlib-1.2.7\zutil.c" />
+    <ClCompile Include="zlib-1.2.8\adler32.c" />
+    <ClCompile Include="zlib-1.2.8\compress.c" />
+    <ClCompile Include="zlib-1.2.8\crc32.c" />
+    <ClCompile Include="zlib-1.2.8\deflate.c" />
+    <ClCompile Include="zlib-1.2.8\gzclose.c" />
+    <ClCompile Include="zlib-1.2.8\gzlib.c" />
+    <ClCompile Include="zlib-1.2.8\gzread.c" />
+    <ClCompile Include="zlib-1.2.8\gzwrite.c" />
+    <ClCompile Include="zlib-1.2.8\infback.c" />
+    <ClCompile Include="zlib-1.2.8\inffast.c" />
+    <ClCompile Include="zlib-1.2.8\inflate.c" />
+    <ClCompile Include="zlib-1.2.8\inftrees.c" />
+    <ClCompile Include="zlib-1.2.8\trees.c" />
+    <ClCompile Include="zlib-1.2.8\uncompr.c" />
+    <ClCompile Include="zlib-1.2.8\zutil.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ExportMacro.h" />
@@ -234,17 +234,17 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     <ClInclude Include="types.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="Win32File.h" />
-    <ClInclude Include="zlib-1.2.7\crc32.h" />
-    <ClInclude Include="zlib-1.2.7\deflate.h" />
-    <ClInclude Include="zlib-1.2.7\gzguts.h" />
-    <ClInclude Include="zlib-1.2.7\inffast.h" />
-    <ClInclude Include="zlib-1.2.7\inffixed.h" />
-    <ClInclude Include="zlib-1.2.7\inflate.h" />
-    <ClInclude Include="zlib-1.2.7\inftrees.h" />
-    <ClInclude Include="zlib-1.2.7\trees.h" />
-    <ClInclude Include="zlib-1.2.7\zconf.h" />
-    <ClInclude Include="zlib-1.2.7\zlib.h" />
-    <ClInclude Include="zlib-1.2.7\zutil.h" />
+    <ClInclude Include="zlib-1.2.8\crc32.h" />
+    <ClInclude Include="zlib-1.2.8\deflate.h" />
+    <ClInclude Include="zlib-1.2.8\gzguts.h" />
+    <ClInclude Include="zlib-1.2.8\inffast.h" />
+    <ClInclude Include="zlib-1.2.8\inffixed.h" />
+    <ClInclude Include="zlib-1.2.8\inflate.h" />
+    <ClInclude Include="zlib-1.2.8\inftrees.h" />
+    <ClInclude Include="zlib-1.2.8\trees.h" />
+    <ClInclude Include="zlib-1.2.8\zconf.h" />
+    <ClInclude Include="zlib-1.2.8\zlib.h" />
+    <ClInclude Include="zlib-1.2.8\zutil.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuildStep Include="zlib\zlib.lib">
