@@ -1,6 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MabinogiResource", "MabinogiResource\MabinogiResource.vcxproj", "{5DB35E93-8DFB-44BB-8A20-29581A2CA995}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MabinogiResource.net", "MabinogiResource.net\MabinogiResource.net.vcxproj", "{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}"
@@ -11,22 +12,38 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
 		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
 		Static|Win32 = Static|Win32
+		Static|x64 = Static|x64
+		Description = Mabinogi Package File Management Libraly
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Debug|Win32.ActiveCfg = Release|Win32
 		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Debug|Win32.Build.0 = Release|Win32
+		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Debug|x64.ActiveCfg = Debug|x64
+		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Debug|x64.Build.0 = Debug|x64
 		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Release|Win32.ActiveCfg = Release|Win32
 		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Release|Win32.Build.0 = Release|Win32
+		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Release|x64.ActiveCfg = Release|x64
+		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Release|x64.Build.0 = Release|x64
 		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Static|Win32.ActiveCfg = Static|Win32
 		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Static|Win32.Build.0 = Static|Win32
+		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Static|x64.ActiveCfg = Static|x64
+		{5DB35E93-8DFB-44BB-8A20-29581A2CA995}.Static|x64.Build.0 = Static|x64
 		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Debug|Win32.ActiveCfg = Release|Win32
 		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Debug|Win32.Build.0 = Release|Win32
+		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Debug|x64.ActiveCfg = Debug|x64
+		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Debug|x64.Build.0 = Debug|x64
 		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Release|Win32.ActiveCfg = Release|Win32
 		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Release|Win32.Build.0 = Release|Win32
+		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Release|x64.ActiveCfg = Release|x64
+		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Release|x64.Build.0 = Release|x64
 		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Static|Win32.ActiveCfg = Static|Win32
 		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Static|Win32.Build.0 = Static|Win32
+		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Static|x64.ActiveCfg = Static|x64
+		{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}.Static|x64.Build.0 = Static|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

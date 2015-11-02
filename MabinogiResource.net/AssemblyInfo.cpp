@@ -14,7 +14,7 @@ using namespace System::Security::Permissions;
 [assembly:AssemblyConfigurationAttribute("")];
 [assembly:AssemblyCompanyAttribute("")];
 [assembly:AssemblyProductAttribute("Mabinogi Resource .Net")];
-[assembly:AssemblyCopyrightAttribute("Copyright (c) 2011-2012,2014 DarknessTM / Logue")];
+[assembly:AssemblyCopyrightAttribute("Copyright (c) 2011-2012,2015 DarknessTM / Logue")];
 [assembly:AssemblyTrademarkAttribute("")];
 [assembly:AssemblyCultureAttribute("")];
 
@@ -34,5 +34,3 @@ using namespace System::Security::Permissions;
 [assembly:ComVisible(false)];
 
 [assembly:CLSCompliantAttribute(true)];
-
-[assembly:SecurityPermission(SecurityAction::RequestMinimum, UnmanagedCode = true)];
