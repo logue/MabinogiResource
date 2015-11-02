@@ -9,7 +9,7 @@ namespace MabinogiResource
 	string	StringTostring(String^ text)
 	{
 		UTF8Encoding^ utf8 = gcnew UTF8Encoding();
-		array<Byte>^ chars=utf8->GetBytes(text);
+		cli::array<Byte>^ chars=utf8->GetBytes(text);
 		string str;
 		for(int i=0;i<chars->Length;++i)
 		{
@@ -82,7 +82,7 @@ namespace MabinogiResource
 	{
 		Close();
 	}
-	size_t PackResource::GetData( array<Byte>^ buffer )
+	size_t PackResource::GetData( cli::array<Byte>^ buffer )
 	{
 		if(m_Handle==NULL) return false;
 		if(buffer->Length<(int)m_Size) return false;

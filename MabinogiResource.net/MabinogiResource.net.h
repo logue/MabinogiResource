@@ -38,7 +38,7 @@ namespace MabinogiResource
 		// Get file version
 		size_t		GetVersion()	{ return m_Version; }
 		// Get file content
-		size_t		GetData(array<Byte>^ buffer);
+		size_t		GetData(cli:: array<Byte>^ buffer);
 
 		// Get file created time
 		System::DateTime		GetCreated()	{ return m_created; }
