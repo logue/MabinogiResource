@@ -38,7 +38,7 @@
     <SccProvider>
     </SccProvider>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -54,16 +54,16 @@
     <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
-    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfMfc>false</UseOfMfc>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
-    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfMfc>false</UseOfMfc>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
@@ -155,6 +155,9 @@ copy "$(ProjectDir)IProgressMonitor.h" "$(TargetDir)include\"
 md "$(TargetDir)lib"
 copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     </PostBuildEvent>
+    <ResourceCompile>
+      <Culture />
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -180,6 +183,9 @@ copy "$(ProjectDir)IProgressMonitor.h" "$(TargetDir)include\"
 md "$(TargetDir)lib"
 copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     </PostBuildEvent>
+    <ResourceCompile>
+      <Culture />
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -192,6 +198,7 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
       <Optimization>Full</Optimization>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>
@@ -212,6 +219,9 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     </PostBuildEvent>
     <ResourceCompile />
     <Manifest />
+    <ResourceCompile>
+      <Culture />
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -225,6 +235,7 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
       <Optimization>Full</Optimization>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
       <EnableEnhancedInstructionSet />
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>
@@ -245,6 +256,9 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     </PostBuildEvent>
     <ResourceCompile />
     <Manifest />
+    <ResourceCompile>
+      <Culture />
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static|Win32'">
     <ClCompile>
@@ -258,6 +272,7 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
       <Optimization>Full</Optimization>
       <PreprocessorDefinitions>_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>
@@ -281,6 +296,9 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
     </Lib>
+    <ResourceCompile>
+      <Culture />
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static|x64'">
     <ClCompile>
@@ -295,6 +313,7 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
       <PreprocessorDefinitions>_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>SyncCThrow</ExceptionHandling>
       <EnableEnhancedInstructionSet />
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>
@@ -318,6 +337,9 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
     </Lib>
+    <ResourceCompile>
+      <Culture />
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -357,21 +379,21 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     </ClCompile>
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="Win32File.cpp" />
-    <ClCompile Include="zlib-1.2.8\adler32.c" />
-    <ClCompile Include="zlib-1.2.8\compress.c" />
-    <ClCompile Include="zlib-1.2.8\crc32.c" />
-    <ClCompile Include="zlib-1.2.8\deflate.c" />
-    <ClCompile Include="zlib-1.2.8\gzclose.c" />
-    <ClCompile Include="zlib-1.2.8\gzlib.c" />
-    <ClCompile Include="zlib-1.2.8\gzread.c" />
-    <ClCompile Include="zlib-1.2.8\gzwrite.c" />
-    <ClCompile Include="zlib-1.2.8\infback.c" />
-    <ClCompile Include="zlib-1.2.8\inffast.c" />
-    <ClCompile Include="zlib-1.2.8\inflate.c" />
-    <ClCompile Include="zlib-1.2.8\inftrees.c" />
-    <ClCompile Include="zlib-1.2.8\trees.c" />
-    <ClCompile Include="zlib-1.2.8\uncompr.c" />
-    <ClCompile Include="zlib-1.2.8\zutil.c" />
+    <ClCompile Include="zlib-1.2.11\adler32.c" />
+    <ClCompile Include="zlib-1.2.11\compress.c" />
+    <ClCompile Include="zlib-1.2.11\crc32.c" />
+    <ClCompile Include="zlib-1.2.11\deflate.c" />
+    <ClCompile Include="zlib-1.2.11\gzclose.c" />
+    <ClCompile Include="zlib-1.2.11\gzlib.c" />
+    <ClCompile Include="zlib-1.2.11\gzread.c" />
+    <ClCompile Include="zlib-1.2.11\gzwrite.c" />
+    <ClCompile Include="zlib-1.2.11\infback.c" />
+    <ClCompile Include="zlib-1.2.11\inffast.c" />
+    <ClCompile Include="zlib-1.2.11\inflate.c" />
+    <ClCompile Include="zlib-1.2.11\inftrees.c" />
+    <ClCompile Include="zlib-1.2.11\trees.c" />
+    <ClCompile Include="zlib-1.2.11\uncompr.c" />
+    <ClCompile Include="zlib-1.2.11\zutil.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ExportMacro.h" />
@@ -393,17 +415,17 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     <ClInclude Include="types.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="Win32File.h" />
-    <ClInclude Include="zlib-1.2.8\crc32.h" />
-    <ClInclude Include="zlib-1.2.8\deflate.h" />
-    <ClInclude Include="zlib-1.2.8\gzguts.h" />
-    <ClInclude Include="zlib-1.2.8\inffast.h" />
-    <ClInclude Include="zlib-1.2.8\inffixed.h" />
-    <ClInclude Include="zlib-1.2.8\inflate.h" />
-    <ClInclude Include="zlib-1.2.8\inftrees.h" />
-    <ClInclude Include="zlib-1.2.8\trees.h" />
-    <ClInclude Include="zlib-1.2.8\zconf.h" />
-    <ClInclude Include="zlib-1.2.8\zlib.h" />
-    <ClInclude Include="zlib-1.2.8\zutil.h" />
+    <ClInclude Include="zlib-1.2.11\crc32.h" />
+    <ClInclude Include="zlib-1.2.11\deflate.h" />
+    <ClInclude Include="zlib-1.2.11\gzguts.h" />
+    <ClInclude Include="zlib-1.2.11\inffast.h" />
+    <ClInclude Include="zlib-1.2.11\inffixed.h" />
+    <ClInclude Include="zlib-1.2.11\inflate.h" />
+    <ClInclude Include="zlib-1.2.11\inftrees.h" />
+    <ClInclude Include="zlib-1.2.11\trees.h" />
+    <ClInclude Include="zlib-1.2.11\zconf.h" />
+    <ClInclude Include="zlib-1.2.11\zlib.h" />
+    <ClInclude Include="zlib-1.2.11\zutil.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuildStep Include="zlib\zlib.lib">
