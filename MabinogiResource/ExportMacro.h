@@ -1,7 +1,5 @@
 #pragma once
 
-#ifdef _WINDLL
+#ifndef MABINOGIRESOURCE_API
 #define MABINOGIRESOURCE_API __declspec(dllexport)
-#else
-#define MABINOGIRESOURCE_API __declspec(dllimport)
 #endif

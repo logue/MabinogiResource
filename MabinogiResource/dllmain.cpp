@@ -1,19 +1,29 @@
-// dllmain.cpp : 定义 DLL 应用程序的入口点。
-#include "stdafx.h"
+// dllmain.cpp : Defines the entry point for the DLL application.
 
-BOOL APIENTRY DllMain( HMODULE hModule,
-                       DWORD  ul_reason_for_call,
-                       LPVOID lpReserved
-					 )
+#ifdef _WIN32
+#define WIN32_LEAN_AND_MEAN
+#define NOMINMAX
+#include <Windows.h>
+#endif
+
+static HINSTANCE g_hInst = 0;
+
+BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 {
-	switch (ul_reason_for_call)
-	{
-	case DLL_PROCESS_ATTACH:
-	case DLL_THREAD_ATTACH:
-	case DLL_THREAD_DETACH:
-	case DLL_PROCESS_DETACH:
-		break;
-	}
-	return TRUE;
+    BOOL rc = TRUE;
+    switch (fdwReason)
+    {
+    // 正しく処理が終わった場合はTRUEを返す必要あり
+    case DLL_PROCESS_ATTACH:
+        g_hInst = hinstDLL;
+        break;
+    case DLL_PROCESS_DETACH:
+        g_hInst = 0;
+        break;
+    case DLL_THREAD_ATTACH:
+        break;
+    case DLL_THREAD_DETACH:
+        break;
+    }
+    return rc;
 }
-

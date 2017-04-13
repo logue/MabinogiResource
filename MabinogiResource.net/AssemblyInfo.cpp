@@ -9,12 +9,12 @@ using namespace System::Security::Permissions;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 //
-[assembly:AssemblyTitleAttribute("Mabinogi Resource .Net")];
+[assembly:AssemblyTitleAttribute("Mabinogi Resource DLL .Net")];
 [assembly:AssemblyDescriptionAttribute("Mabinogi Package File Management API Library for .NET")];
 [assembly:AssemblyConfigurationAttribute("")];
 [assembly:AssemblyCompanyAttribute("")];
-[assembly:AssemblyProductAttribute("Mabinogi Resource .Net")];
-[assembly:AssemblyCopyrightAttribute("Copyright (c) 2011-2012,2015,2017 DarknessTM / Logue")];
+[assembly:AssemblyProductAttribute("Mabinogi Resource DLL .Net")];
+[assembly:AssemblyCopyrightAttribute("Copyright (c) 2011 DarknessTM / 2012,2015,2017 Logue")];
 [assembly:AssemblyTrademarkAttribute("")];
 [assembly:AssemblyCultureAttribute("")];
 

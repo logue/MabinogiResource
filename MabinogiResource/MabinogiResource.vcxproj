@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -38,48 +38,45 @@
     <SccProvider>
     </SccProvider>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <WholeProgramOptimization>PGOptimize</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>PGOptimize</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static|Win32'" Label="Configuration">
+    <PlatformToolset>v141</PlatformToolset>
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
-    <UseOfMfc>false</UseOfMfc>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>PGOptimize</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <UseOfMfc>false</UseOfMfc>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>PGOptimize</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfAtl>Static</UseOfAtl>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfAtl>Static</UseOfAtl>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -105,14 +102,6 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Static|Win32'">$(SolutionDir)Release\$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Static|Win32'">$(Configuration)\</IntDir>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
@@ -135,9 +124,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
-      <ExceptionHandling>SyncCThrow</ExceptionHandling>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>
@@ -153,7 +140,7 @@ copy "$(ProjectDir)IResource.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IResourceSet.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IProgressMonitor.h" "$(TargetDir)include\"
 md "$(TargetDir)lib"
-copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
+move "$(TargetDir)$(ProjectName).lib" "$(TargetDir)"</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <Culture />
@@ -161,11 +148,8 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
-      <ExceptionHandling>SyncCThrow</ExceptionHandling>
-      <EnableEnhancedInstructionSet />
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>
@@ -180,8 +164,7 @@ copy "$(ProjectDir)IObject.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IResource.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IResourceSet.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IProgressMonitor.h" "$(TargetDir)include\"
-md "$(TargetDir)lib"
-copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
+move "$(TargetDir)$(ProjectName).lib" "$(TargetDir)"</Command>
     </PostBuildEvent>
     <ResourceCompile>
       <Culture />
@@ -189,21 +172,11 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
-      <Optimization>Full</Optimization>
-      <ExceptionHandling>SyncCThrow</ExceptionHandling>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <Version>
       </Version>
     </Link>
@@ -215,7 +188,7 @@ copy "$(ProjectDir)IResource.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IResourceSet.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IProgressMonitor.h" "$(TargetDir)include\"
 md "$(TargetDir)lib"
-copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
+move "$(TargetDir)$(ProjectName).lib" "$(TargetDir)"</Command>
     </PostBuildEvent>
     <ResourceCompile />
     <Manifest />
@@ -225,22 +198,11 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
-      <Optimization>Full</Optimization>
-      <ExceptionHandling>SyncCThrow</ExceptionHandling>
-      <EnableEnhancedInstructionSet />
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <Version>
       </Version>
     </Link>
@@ -251,8 +213,7 @@ copy "$(ProjectDir)IObject.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IResource.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IResourceSet.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IProgressMonitor.h" "$(TargetDir)include\"
-md "$(TargetDir)lib"
-copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
+move "$(TargetDir)$(ProjectName).lib" "$(TargetDir)"</Command>
     </PostBuildEvent>
     <ResourceCompile />
     <Manifest />
@@ -262,17 +223,7 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static|Win32'">
     <ClCompile>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
-      <Optimization>Full</Optimization>
-      <PreprocessorDefinitions>_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ExceptionHandling>SyncCThrow</ExceptionHandling>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>
@@ -289,31 +240,22 @@ copy "$(ProjectDir)IResource.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IResourceSet.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IProgressMonitor.h" "$(TargetDir)include\"
 md "$(TargetDir)lib"
-copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
+move "$(TargetDir)$(ProjectName).lib" "$(TargetDir)"</Command>
     </PostBuildEvent>
     <ResourceCompile />
     <Manifest />
-    <Lib>
-      <TargetMachine>MachineX86</TargetMachine>
-    </Lib>
+    <Lib />
     <ResourceCompile>
       <Culture />
     </ResourceCompile>
+    <Lib />
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static|x64'">
     <ClCompile>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
-      <Optimization>Full</Optimization>
-      <PreprocessorDefinitions>_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ExceptionHandling>SyncCThrow</ExceptionHandling>
-      <EnableEnhancedInstructionSet />
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>
@@ -329,14 +271,11 @@ copy "$(ProjectDir)IObject.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IResource.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IResourceSet.h" "$(TargetDir)include\"
 copy "$(ProjectDir)IProgressMonitor.h" "$(TargetDir)include\"
-md "$(TargetDir)lib"
-copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
+move "$(TargetDir)$(ProjectName).lib" "$(TargetDir)"</Command>
     </PostBuildEvent>
     <ResourceCompile />
     <Manifest />
-    <Lib>
-      <TargetMachine>MachineX86</TargetMachine>
-    </Lib>
+    <Lib />
     <ResourceCompile>
       <Culture />
     </ResourceCompile>

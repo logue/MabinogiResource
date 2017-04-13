@@ -2,7 +2,6 @@
 #include <vcclr.h>
 #include "MabinogiResource.net.h"
 using namespace std;
-#pragma comment(lib,"MabinogiResource.lib")
 
 namespace MabinogiResource
 {
@@ -208,4 +207,5 @@ namespace MabinogiResource
 		if(h==NULL) return nullptr;
 		return gcnew PackResourceSet(h);
 	}
+	//========================================================================================
 }
