@@ -1,0 +1,3 @@
+[submodule "MabinogiResource/zlib"]
+	path = MabinogiResource/zlib
+	url = https://github.com/madler/zlib

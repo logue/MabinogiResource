@@ -3,7 +3,7 @@
 #include "IResource.h"
 #include <memory>
 #include <vector>
-#include "zlib-1.2.11/zlib.h"
+#include "zlib/zlib.h"
 //#pragma comment(lib, "zlib125-dll/lib/zdll.lib")
 
 using namespace std;

@@ -106,4 +106,37 @@ namespace MabinogiResource
 		//		outputPath : Save path of generated pack file
 		bool	CreatePack(String^ outputPath);
 	};
+	public ref class ProgressMonitor
+		public:
+			// Constructor
+			IProgressMonitor(void);
+
+				// Destructor
+			~IProgressMonitor(void);
+
+			// Start a job
+			void BeginWork(LPCTSTR lpszName, int totalWork);
+
+			// Increase operational step
+			void Worked(int work);
+
+			// End of the job
+			void Done();
+
+			// Set the name of the current job
+			void SetTaskName(LPCTSTR name);
+
+			// Set the sub name of the current job
+			void SetSubTaskName(LPCTSTR lpszName);
+
+			// Back to the current job is being canceled
+			bool IsCanceled();
+
+			// Set the current job whether to cancel
+			void SetCanceled(bool value);
+
+		private:
+			IProgressMonitor(IProgressMonitor const & other);
+			IProgressMonitor& operator=(IProgressMonitor const & other);
+		};
 }
