@@ -1,0 +1,14 @@
+version: 1.0.6.{build}
+branches:
+  only:
+    - master
+image: Visual Studio 2017
+build:
+  verbosity: minimal
+platform:
+    - Win32
+    - x64
+configuration:
+    - Release
+artifacts:
+- path: Release\*.dll
