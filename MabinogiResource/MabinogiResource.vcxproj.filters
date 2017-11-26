@@ -19,6 +19,9 @@
     <Filter Include="Resource\Library\zlib">
       <UniqueIdentifier>{c6f04570-0e2b-458c-bfbb-34cdac017721}</UniqueIdentifier>
     </Filter>
+    <Filter Include="zlib">
+      <UniqueIdentifier>{ddf9adaa-c573-4baa-b4c2-5dc01a56225c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -54,50 +57,50 @@
     <ClCompile Include="NullProgressMonitor.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\adler32.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\adler32.c">
+      <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\compress.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\compress.c">
+      <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\crc32.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\crc32.c">
+      <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\deflate.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\deflate.c">
+      <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\gzclose.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\gzclose.c">
+      <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\gzlib.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\gzlib.c">
+      <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\gzread.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\gzread.c">
+      <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\gzwrite.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\gzwrite.c">
+      <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\infback.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\infback.c">
+      <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\inffast.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\inffast.c">
+      <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\inflate.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\inflate.c">
+      <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\inftrees.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\inftrees.c">
+      <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\trees.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\trees.c">
+      <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\uncompr.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\uncompr.c">
+      <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="zlib-1.2.11\zutil.c">
-      <Filter>Source</Filter>
+    <ClCompile Include="zlib\zutil.c">
+      <Filter>zlib</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -152,48 +155,42 @@
     <ClInclude Include="NullProgressMonitor.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="tstring.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.11\crc32.h">
-      <Filter>Header</Filter>
+    <ClInclude Include="zlib\gzguts.h">
+      <Filter>zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.11\deflate.h">
-      <Filter>Header</Filter>
+    <ClInclude Include="zlib\inffast.h">
+      <Filter>zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.11\gzguts.h">
-      <Filter>Header</Filter>
+    <ClInclude Include="zlib\inffixed.h">
+      <Filter>zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.11\inffast.h">
-      <Filter>Header</Filter>
+    <ClInclude Include="zlib\inflate.h">
+      <Filter>zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.11\inffixed.h">
-      <Filter>Header</Filter>
+    <ClInclude Include="zlib\inftrees.h">
+      <Filter>zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.11\inflate.h">
-      <Filter>Header</Filter>
+    <ClInclude Include="zlib\deflate.h">
+      <Filter>zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.11\inftrees.h">
-      <Filter>Header</Filter>
+    <ClInclude Include="zlib\crc32.h">
+      <Filter>zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.11\trees.h">
-      <Filter>Header</Filter>
+    <ClInclude Include="zlib\trees.h">
+      <Filter>zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.11\zconf.h">
-      <Filter>Header</Filter>
+    <ClInclude Include="zlib\zlib.h">
+      <Filter>zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.11\zlib.h">
-      <Filter>Header</Filter>
+    <ClInclude Include="zlib\zutil.h">
+      <Filter>zlib</Filter>
     </ClInclude>
-    <ClInclude Include="zlib-1.2.11\zutil.h">
-      <Filter>Header</Filter>
+    <ClInclude Include="zlib\zconf.h">
+      <Filter>zlib</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MabinogiResource.rc">

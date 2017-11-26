@@ -1,7 +1,6 @@
 #include "StdAfx.h"
 #include "ResourceFileSystem.h"
 
-#include "tstring.h"
 #include "PackResourceSet.h"
 #include "Utility.h"
 #include <map>
