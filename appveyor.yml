@@ -1,11 +1,11 @@
-version: 1.0.6.{build}
-init:
-- cmd: >-
-    git submodule init
-
-    git submodule update
+image: Visual Studio 2017
+configuration: Static
+platform: x86
+before_build:
+- cmd: git submodule update --init
 build:
   verbosity: minimal
 artifacts:
-- path: Release\*
-  name: Win32
+- path: Static\*
+  name: MabinogiResource.$(GitVersion_LegacySemVerPadded)
+  type: zip
