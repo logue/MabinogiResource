@@ -7,11 +7,11 @@
 #define IDS_WRITE_PACK_HEADER                   40002
 #define IDS_WRITE_FILE_LIST                     40003
 
-#define VER_FILEVERSION             1,0,6,0
-#define VER_FILEVERSION_STR         "1.0.6.0\0"
+#define VER_FILEVERSION             1,0,7,1
+#define VER_FILEVERSION_STR         "1.0.7.1\0"
 
-#define VER_PRODUCTVERSION          1,0,6,0
-#define VER_PRODUCTVERSION_STR      "1.0.6.0\0"
+#define VER_PRODUCTVERSION          1,0,7,1
+#define VER_PRODUCTVERSION_STR      "1.0.7.1\0"
 
 #ifndef DEBUG
 #define VER_DEBUG                   0
@@ -24,3 +24,5 @@
 #else
 #define VER_FILE_DESC               "Mabinogi Package File Management API Library (x86)"
 #endif
+
+#define VER_COPYRIGHT               "Copyright (C) 2011 DarknessTM / 2012,2014,2017,2019 Logue"

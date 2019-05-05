@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="15.0" 
-  xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -31,7 +30,7 @@
     <ProjectGuid>{EA18C3C0-FDB5-40BF-8305-3FD9114C45E4}</ProjectGuid>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>MabinogiResourcenet</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <TargetFrameworkVersion>4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,45 +39,46 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>true</CLRSupport>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>true</CLRSupport>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>true</CLRSupport>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>true</CLRSupport>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>true</CLRSupport>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>true</CLRSupport>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings"></ImportGroup>
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -131,7 +131,6 @@
     </ClCompile>
     <Link>
       <ShowProgress>LinkVerboseLib</ShowProgress>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
       <AdditionalDependencies>$(OutputPath)lib\MabinogiResource.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -144,7 +143,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <ShowProgress>LinkVerboseLib</ShowProgress>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
       <AdditionalDependencies>$(OutputPath)lib\MabinogiResource.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -160,8 +158,8 @@
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <ImportLibrary></ImportLibrary>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <ImportLibrary>
+      </ImportLibrary>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>$(OutputPath)lib\MabinogiResource.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -179,9 +177,9 @@
     <Link>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <ImportLibrary></ImportLibrary>
+      <ImportLibrary>
+      </ImportLibrary>
       <SubSystem>Windows</SubSystem>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>$(OutputPath)lib\MabinogiResource.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -198,8 +196,8 @@
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <ImportLibrary></ImportLibrary>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <ImportLibrary>
+      </ImportLibrary>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>$(OutputPath)lib\MabinogiResource.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -217,9 +215,9 @@
     <Link>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <ImportLibrary></ImportLibrary>
+      <ImportLibrary>
+      </ImportLibrary>
       <SubSystem>Windows</SubSystem>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>$(OutputPath)lib\MabinogiResource.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -241,5 +239,6 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets"></ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
 </Project>
