@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0"
+  xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -29,14 +30,6 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5DB35E93-8DFB-44BB-8A20-29581A2CA995}</ProjectGuid>
     <RootNamespace>MabinogiResource</RootNamespace>
-    <SccProjectName>
-    </SccProjectName>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccProvider>
-    </SccProvider>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -44,42 +37,37 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <PlatformToolset>v142</PlatformToolset>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PlatformToolset>v142</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static|Win32'" Label="Configuration">
-    <PlatformToolset>v142</PlatformToolset>
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <UseOfAtl>Static</UseOfAtl>
     <PlatformToolset>v142</PlatformToolset>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfAtl>Static</UseOfAtl>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings"></ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -98,7 +86,6 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
@@ -125,8 +112,6 @@
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
     </ClCompile>
     <Link>
-      <ModuleDefinitionFile>
-      </ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
     </Link>
@@ -141,9 +126,6 @@ copy "$(ProjectDir)IProgressMonitor.h" "$(TargetDir)include\"
 md "$(TargetDir)lib"
 copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     </PostBuildEvent>
-    <ResourceCompile>
-      <Culture />
-    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -151,11 +133,8 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
       <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
-      <ModuleDefinitionFile>
-      </ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <LinkTimeCodeGeneration />
     </Link>
     <PostBuildEvent>
       <Command>md "$(TargetDir)include"
@@ -168,23 +147,12 @@ copy "$(ProjectDir)IProgressMonitor.h" "$(TargetDir)include\"
 md "$(TargetDir)lib"
 copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     </PostBuildEvent>
-    <ResourceCompile>
-      <Culture />
-    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
       <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
-    <Link>
-      <ModuleDefinitionFile>
-      </ModuleDefinitionFile>
-      <Version>
-      </Version>
-      <LinkTimeCodeGeneration>
-      </LinkTimeCodeGeneration>
-    </Link>
     <PostBuildEvent>
       <Command>md "$(TargetDir)include"
 copy "$(ProjectDir)ExportMacro.h" "$(TargetDir)include\"
@@ -196,25 +164,12 @@ copy "$(ProjectDir)IProgressMonitor.h" "$(TargetDir)include\"
 md "$(TargetDir)lib"
 copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     </PostBuildEvent>
-    <ResourceCompile />
-    <Manifest />
-    <ResourceCompile>
-      <Culture />
-    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
       <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
-    <Link>
-      <ModuleDefinitionFile>
-      </ModuleDefinitionFile>
-      <Version>
-      </Version>
-      <LinkTimeCodeGeneration>
-      </LinkTimeCodeGeneration>
-    </Link>
     <PostBuildEvent>
       <Command>md "$(TargetDir)include"
 copy "$(ProjectDir)ExportMacro.h" "$(TargetDir)include\"
@@ -226,22 +181,13 @@ copy "$(ProjectDir)IProgressMonitor.h" "$(TargetDir)include\"
 md "$(TargetDir)lib"
 copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     </PostBuildEvent>
-    <ResourceCompile />
-    <Manifest />
-    <ResourceCompile>
-      <Culture />
-    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static|Win32'">
     <ClCompile>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
     </ClCompile>
     <Link>
-      <ModuleDefinitionFile>
-      </ModuleDefinitionFile>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <Version>
-      </Version>
     </Link>
     <PostBuildEvent>
       <Command>md "$(TargetDir)include"
@@ -254,13 +200,6 @@ copy "$(ProjectDir)IProgressMonitor.h" "$(TargetDir)include\"
 md "$(TargetDir)lib"
 copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     </PostBuildEvent>
-    <ResourceCompile />
-    <Manifest />
-    <Lib />
-    <ResourceCompile>
-      <Culture />
-    </ResourceCompile>
-    <Lib />
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
     </Lib>
@@ -270,11 +209,7 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
     </ClCompile>
     <Link>
-      <ModuleDefinitionFile>
-      </ModuleDefinitionFile>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <Version>
-      </Version>
     </Link>
     <PostBuildEvent>
       <Command>md "$(TargetDir)include"
@@ -287,29 +222,17 @@ copy "$(ProjectDir)IProgressMonitor.h" "$(TargetDir)include\"
 md "$(TargetDir)lib"
 copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     </PostBuildEvent>
-    <ResourceCompile />
-    <Manifest />
-    <Lib />
-    <ResourceCompile>
-      <Culture />
-    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"></PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Static|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Static|x64'">
-      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"></PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Static|Win32'"></PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Static|x64'"></PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Static|Win32'">false</CompileAsManaged>
@@ -394,6 +317,4 @@ copy "$(TargetDir)$(ProjectName).lib" "$(TargetDir)lib\"</Command>
     <ResourceCompile Include="MabinogiResource.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
 </Project>
